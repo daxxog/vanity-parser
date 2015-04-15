@@ -5,6 +5,8 @@
  * http://www.apache.org/licenses/LICENSE-2.0.html  
  */
 
-var VanityParser = require('./vanity-parser.min.js');
+var VanityParser = require('./vanity-parser.js');
 
-new VanityParser();
+VanityParser('blue.txt', function(data) {
+	console.log(data);
+});

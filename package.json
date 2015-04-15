@@ -1,39 +1,44 @@
 {
-    "name"        : "vanity-parser",
-    "description" : "parse text files from vanitygen into pretty JSON",
-    "homepage"    : "https://github.com/daxxog/vanity-parser",
-    "main"        : "vanity-parser.min.js",
-    "version"     : "0.0.1",
-    "engines": {
-        "node" : ">=0.10.33"
-    },
-    "maintainers": [{
-        "name"  : "David Volm",
-        "email" : "david@volminator.com",
-        "web"   : "http://daxxog.com/"
-    }],
-    "repository": {
-        "type" : "git",
-        "url"  : "https://github.com/daxxog/vanity-parser.git"
-    },
-    "devDependencies": {
-        "bitfactory": "*",
-        "stoptime": "*",
-        "uglify-js": "*",
-        "vows": "*"
-    },
-    "scripts": {
-        "build": "node make.js",
-        "test": "vows test/*",
-        "start": "node cli.js",
-        "prepublish": "npm run build"
-    },
-    "files": [
-        "cli.min.js",
-        "vanity-parser.min.js",
-        "./bin/vanity-parser"
-    ],
-    "bin": {
-        "vanity-parser" : "./bin/vanity-parser"
+  "name": "vanity-parser",
+  "description": "parse text files from vanitygen into pretty JSON",
+  "homepage": "https://github.com/daxxog/vanity-parser",
+  "main": "vanity-parser.min.js",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=0.10.33"
+  },
+  "maintainers": [
+    {
+      "name": "David Volm",
+      "email": "david@volminator.com",
+      "web": "http://daxxog.com/"
     }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/daxxog/vanity-parser.git"
+  },
+  "devDependencies": {
+    "bitfactory": "*",
+    "stoptime": "*",
+    "uglify-js": "*",
+    "vows": "*"
+  },
+  "scripts": {
+    "build": "node make.js",
+    "test": "vows test/*",
+    "start": "node cli.js",
+    "prepublish": "npm run build"
+  },
+  "files": [
+    "cli.min.js",
+    "vanity-parser.min.js",
+    "./bin/vanity-parser"
+  ],
+  "bin": {
+    "vanity-parser": "./bin/vanity-parser"
+  },
+  "dependencies": {
+    "string": "^3.1.1"
+  }
 }
