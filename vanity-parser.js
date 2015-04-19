@@ -22,14 +22,41 @@
 }(this, function() {
     var fs = require('fs'),
         S = require('string'),
+        async = require('async'),
         VanityParser;
     
     VanityParser = function(files, cb) {
-        if(typeof files === 'string') {
-            fs.readFile(files, function(err, data) {
-                cb(VanityParser.parse(data));
+        if(Array.isArray(files)) {
+            async.map(files, VanityParser, function(err, data) {
+                cb(err, VanityParser.merge(data));
             });
         }
+
+        if(typeof files === 'string') {
+            fs.readFile(files, function(err, data) {
+                if(err) {
+                    cb(err);
+                } else {
+                    cb(null, VanityParser.parse(data));
+                }
+            });
+        }
+    };
+
+    VanityParser.merge = function(data) {
+        var obj = {};
+
+        data.forEach(function(v) {
+            for(var key in v) {
+                if(!Array.isArray(obj[key])) {
+                    obj[key] = v[key];
+                } else {
+                    obj[key] = obj[key].concat(v[key]);
+                }
+            }
+        });
+
+        return obj;
     };
 
     VanityParser.magic = function(x, v, c) {

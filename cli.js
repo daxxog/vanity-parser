@@ -7,6 +7,10 @@
 
 var VanityParser = require('./vanity-parser.js');
 
-VanityParser('blue.txt', function(data) {
-	console.log(data);
+VanityParser(process.argv.slice(2), function(err, data) {
+	if(err) {
+		console.error(JSON.stringify({'Error': err}));
+	} else {
+		console.log(JSON.stringify(data));
+	}
 });
