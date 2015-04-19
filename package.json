@@ -3,7 +3,7 @@
   "description": "parse text files from vanitygen into pretty JSON",
   "homepage": "https://github.com/daxxog/vanity-parser",
   "main": "vanity-parser.min.js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "node": ">=0.10.33"
   },
