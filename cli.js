@@ -5,7 +5,7 @@
  * http://www.apache.org/licenses/LICENSE-2.0.html  
  */
 
-var VanityParser = require('./vanity-parser.js');
+var VanityParser = require('./vanity-parser.min.js');
 
 VanityParser(process.argv.slice(2), function(err, data) {
 	if(err) {

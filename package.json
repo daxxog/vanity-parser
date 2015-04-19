@@ -26,7 +26,7 @@
   },
   "scripts": {
     "build": "node make.js",
-    "test": "vows test/*",
+    "test": "vows test/basic.js",
     "start": "node cli.js",
     "prepublish": "npm run build"
   },
